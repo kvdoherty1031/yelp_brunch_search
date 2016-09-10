@@ -1,0 +1,27 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="jumbotron">
+			<div class="container">
+				{% if addresstorender %}
+					<h1>Here are the best spots in {{ addresstorender }}!</h1>
+					<p>{{ businesses[0] }}</p>
+					<p>{{ businesses[1] }}</p>
+					<p>{{ businesses[2] }}</p>
+				{% else%}
+					<h1>Wanna dine al fresco?</h1>
+					<form action="/" class="form-inline">
+						<div class="form-group">
+							<input type="text" name="addresstorender" placeholder="enter your location" class="form-control">
+						</div>
+						<input type="submit" value="Submit" class="btn btn-primary">
+					</form>
+				{% endif %}
+				<a href="{{ url_for ('about') }}">About this project</a>
+			</div>
+		</div>
+	</body>
+</html>

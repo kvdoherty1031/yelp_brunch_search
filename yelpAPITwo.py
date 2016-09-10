@@ -5,11 +5,12 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 auth = Oauth1Authenticator(
-    consumer_key=os.environ['CONSUMER_KEY'],
-    consumer_secret=os.environ['CONSUMER_SECRET'],
-    token=os.environ['TOKEN'],
-    token_secret=os.environ['TOKEN_SECRET']
+    consumer_key=os.environ['CONSUMER_KEYCODE'],
+    consumer_secret=os.environ['CONSUMER_SECRETCODE'],
+    token=os.environ['TOKENCODE'],
+    token_secret=os.environ['TOKEN_SECRETCODE']
 )
+
 
 businesslist = []
 

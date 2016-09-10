@@ -11,10 +11,8 @@ auth = Oauth1Authenticator(
     token_secret=os.environ['TOKEN_SECRETCODE']
 )
 
-
-businesslist = []
-
 def make_params(location):
+	businesslist = []
 	parameterone = "brunch"
 	client = Client(auth)
 	parameters_for_search = {
@@ -25,11 +23,9 @@ def make_params(location):
 	results = client.search(location)
 	results.businesses
 	results.businesses[0].name
-	# print(results.businesses[0])
 	for business_returned in results.businesses:
-		if (business_returned.rating > 3 and business_returned.rating <= 4):
+		if (business_returned.rating > 3):
 			print(business_returned.name, business_returned.rating)
-			# print(business_above_four)
 			if len(businesslist)<3:
 				businesslist.append("{} -  RATED: {}   PHONE#: {}   ADDRESS: {}" .format(business_returned.name, 
 					business_returned.rating, business_returned.phone, 

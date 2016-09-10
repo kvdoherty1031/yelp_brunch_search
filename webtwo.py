@@ -6,9 +6,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-	# businesslist = []
+	businesslist = []
 	address = request.values.get('addresstorender')
-	make_params(address)
+	businesslist = make_params(address)
 	return render_template ('indextwo.html', addresstorender=address, businesses=businesslist)
 
 @app.route("/about")

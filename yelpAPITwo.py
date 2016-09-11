@@ -24,7 +24,7 @@ def make_params(location):
 	results.businesses
 	results.businesses[0].name
 	for business_returned in results.businesses:
-		if (business_returned.rating > 3):
+		if (business_returned.rating > 3 and business_returned.is_closed != "true"):
 			print(business_returned.name, business_returned.rating)
 			if len(businesslist)<3:
 				businesslist.append("{} -  RATED: {}   PHONE#: {}   ADDRESS: {}" .format(business_returned.name, 
